@@ -1,7 +1,6 @@
 package journal.reading.automation;
 
 import com.microsoft.playwright.*;
-import org.junit.*;
 import org.junit.jupiter.api.*;
 
 public class LaunchSettings {

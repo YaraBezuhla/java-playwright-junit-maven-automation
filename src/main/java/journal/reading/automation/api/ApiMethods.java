@@ -9,12 +9,8 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 
 import java.io.File;
-import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ApiMethods {
 
