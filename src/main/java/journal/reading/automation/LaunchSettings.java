@@ -10,8 +10,8 @@ public class LaunchSettings {
     static Browser browser;
 
     // New instance for each test method.
-    BrowserContext context;
-    Page page;
+    public BrowserContext context;
+    public Page page;
 
   /*  @BeforeAll
     public static void setUp() {
