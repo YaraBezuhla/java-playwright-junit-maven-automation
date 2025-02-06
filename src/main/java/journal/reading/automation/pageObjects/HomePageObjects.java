@@ -2,19 +2,20 @@ package journal.reading.automation.pageObjects;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class HomePageObjects {
     private Page page;
+    private Locator blocksTitles;
 
-    public HomePageObjects(Page page){
+    public HomePageObjects(Page page) {
         this.page = page;
+        this.blocksTitles = page.getByTestId("popular-block-title");
     }
 
-    Locator blocksTitles = page.getByTestId("popular-block-title");
-
-    public void assertBlocksName(){
-        assertThat(blocksTitles).hasText(new String[] { "apple", "banana"});
+    public void assertBlocksName() {
+        assertThat(blocksTitles).hasText(new String[]{"Найпопулярніші книги", "Українські автори"});
     }
 
 }
