@@ -17,5 +17,4 @@ public class HomePageObjects {
     public void assertBlocksName() {
         assertThat(blocksTitles).hasText(new String[]{"Найпопулярніші книги", "Українські автори"});
     }
-
 }
