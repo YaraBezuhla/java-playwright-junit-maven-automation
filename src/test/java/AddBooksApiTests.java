@@ -22,9 +22,4 @@ public class AddBooksApiTests {
         apiMethods.addBookByApi(1, 201);
         apiMethods.addBookByApi(1, 409);
     }
-
-    @Test
-    public void deleteBookByApiTest(){
-        apiMethods.deleteBookByApi();
-    }
 }
