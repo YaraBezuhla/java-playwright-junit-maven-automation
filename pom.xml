@@ -44,6 +44,12 @@
             <artifactId>mongodb-driver-sync</artifactId>
             <version>5.3.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.29.1</version>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>

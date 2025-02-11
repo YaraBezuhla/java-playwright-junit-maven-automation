@@ -6,15 +6,14 @@ import com.microsoft.playwright.Page;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class HomePageObjects {
-    private Page page;
-    private Locator blocksTitles;
+
+    private final Locator blocksTitles;
 
     public HomePageObjects(Page page) {
-        this.page = page;
         this.blocksTitles = page.getByTestId("popular-block-title");
     }
 
-    public void assertBlocksName() {
-        assertThat(blocksTitles).hasText(new String[]{"Найпопулярніші книги", "Українські автори"});
+    public void assertBlocksName(String... expectedTitles) {
+        assertThat(blocksTitles).hasText(expectedTitles);
     }
 }
