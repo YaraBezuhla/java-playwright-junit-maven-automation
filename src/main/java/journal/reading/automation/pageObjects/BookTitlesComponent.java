@@ -5,16 +5,13 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 public class BookTitlesComponent {
-    private Page page;
-    private Locator booksTitles;
-    private Locator showMoreBtn;
+    private final Locator booksTitles;
+    private final Locator showMoreBtn;
 
     public BookTitlesComponent(Page page) {
-        this.page = page;
         this.booksTitles = page.locator("//h3[@name]");
         this.showMoreBtn = page.locator("//div[@data-test='top-books']").
                 getByRole(AriaRole.BUTTON);
@@ -33,7 +30,6 @@ public class BookTitlesComponent {
             }
         }
 
-        ArrayList<String> bookName = (ArrayList<String>) booksTitles.allInnerTexts();
-        return bookName;
+        return (ArrayList<String>) booksTitles.allInnerTexts();
     }
 }
