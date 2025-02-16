@@ -3,11 +3,14 @@ package journal.reading.automation.pageObjects;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
+@Component
 public class HomePageObjects {
 
     private final Locator blocksTitles;
@@ -15,6 +18,7 @@ public class HomePageObjects {
     private final Locator authorName;
     private final Locator searchPage;
 
+    @Autowired
     public HomePageObjects(Page page) {
         this.blocksTitles = page.getByTestId("popular-block-title");
         this.showMoreAuthorsBtn = page.locator("//div[@data-test='top-authors']").
