@@ -1,8 +1,10 @@
-import journal.reading.automation.LaunchSettings;
+package uiTests;
+
+import journal.reading.automation.config.LaunchSettings;
 import journal.reading.automation.database.DataManipulation;
 import journal.reading.automation.database.GetDataFromMongoDB;
-import journal.reading.automation.pageObjects.BookTitlesComponent;
-import journal.reading.automation.pageObjects.HomePageObjects;
+import journal.reading.automation.pageObjects.components.BookTitlesComponent;
+import journal.reading.automation.pageObjects.pages.HomePageObjects;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

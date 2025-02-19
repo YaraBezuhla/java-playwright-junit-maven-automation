@@ -1,4 +1,4 @@
-package journal.reading.automation;
+package journal.reading.automation.config;
 
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;

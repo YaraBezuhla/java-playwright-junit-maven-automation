@@ -1,6 +1,8 @@
+package uiTests;
+
 import io.qameta.allure.Description;
 import journal.reading.automation.pageObjects.PageObjectsFacade;
-import journal.reading.automation.TestConfigWithSpring;
+import journal.reading.automation.config.TestConfigWithSpring;
 import journal.reading.automation.database.DataManipulation;
 import journal.reading.automation.database.GetDataFromMongoDB;
 import org.junit.jupiter.api.Test;

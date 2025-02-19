@@ -1,4 +1,4 @@
-package journal.reading.automation.pageObjects;
+package journal.reading.automation.pageObjects.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
