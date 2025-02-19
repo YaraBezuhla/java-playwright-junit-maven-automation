@@ -1,7 +1,9 @@
-import journal.reading.automation.LaunchSettings;
+package uiTests;
+
+import journal.reading.automation.config.LaunchSettings;
 import journal.reading.automation.datas.BookProcessor;
-import journal.reading.automation.pageObjects.HomePageObjects;
-import journal.reading.automation.pageObjects.SearchPageObject;
+import journal.reading.automation.pageObjects.pages.HomePageObjects;
+import journal.reading.automation.pageObjects.pages.SearchPageObject;
 import org.junit.jupiter.api.Test;
 
 public class SearchPageTests extends LaunchSettings {

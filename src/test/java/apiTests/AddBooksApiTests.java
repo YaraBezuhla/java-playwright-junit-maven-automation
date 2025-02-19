@@ -1,3 +1,5 @@
+package apiTests;
+
 import journal.reading.automation.api.ApiMethods;
 import org.junit.jupiter.api.*;
 
