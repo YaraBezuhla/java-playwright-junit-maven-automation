@@ -3,6 +3,7 @@ package journal.reading.automation.pageObjects.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import io.qameta.allure.Step;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,10 +24,12 @@ public class SearchPageObject {
         this.authorBook = page.locator("//p[@data-test='search-book-author']");
     }
 
+    @Step("Ввести запит пошуку назву або автора книги")
     public void inputTextInSearchInput(String searchText){
         searchInput.fill(searchText);
     }
 
+    @Step("Перевірити результат пошуку по назві книги")
     public void assertBookFoundByName(String expectedTitle){
         assertThat(titleBook).hasText(expectedTitle);
     }
