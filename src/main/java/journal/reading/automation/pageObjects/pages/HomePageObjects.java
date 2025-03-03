@@ -3,6 +3,7 @@ package journal.reading.automation.pageObjects.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import io.qameta.allure.Step;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -55,6 +56,7 @@ public class HomePageObjects {
         }
     }
 
+    @Step("Перейти на сторінку пошуку книг")
     public void goToSearchPage() {
         searchPage.click();
     }
