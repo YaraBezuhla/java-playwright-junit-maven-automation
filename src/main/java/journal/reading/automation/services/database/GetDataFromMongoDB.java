@@ -1,4 +1,4 @@
-package journal.reading.automation.database;
+package journal.reading.automation.services.database;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;

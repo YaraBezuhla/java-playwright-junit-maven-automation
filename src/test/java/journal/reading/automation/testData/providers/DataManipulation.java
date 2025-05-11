@@ -1,14 +1,17 @@
-package journal.reading.automation.database;
+package journal.reading.automation.testData.providers;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataManipulation {
-    public void compareDataFromWebsiteAndDatabase(ArrayList<String> dbData, ArrayList<String> webData) {
-        List<String> sortedDbData = dbData.stream().sorted().toList();
-        List<String> sortedWebData = webData.stream().sorted().toList();
+
+    @Step("Порівняння двох масивів")
+    public void compareTwoArrays(ArrayList<String> firstArray, ArrayList<String> secondArray) {
+        List<String> sortedDbData = firstArray.stream().sorted().toList();
+        List<String> sortedWebData = secondArray.stream().sorted().toList();
 
         if (!sortedDbData.equals(sortedWebData)) {
             List<String> missingOnWebsite = sortedDbData.stream()

@@ -1,4 +1,6 @@
-package journal.reading.automation.datas;
+package journal.reading.automation.testData.processor;
+
+import journal.reading.automation.testData.enums.BookData;
 
 import java.util.Random;
 

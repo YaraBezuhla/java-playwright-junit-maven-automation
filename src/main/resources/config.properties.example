@@ -1,0 +1,14 @@
+//MONGODB
+mongodb.uri = mongodb://localhost:27017
+mongodb.database = projectName
+
+//BROWSERS
+browser.chrome = chrome
+browser.firefox = firefox
+
+//URLS
+url.locale = http://localhost:8080/
+url.test = http://test:8080/
+
+//WAIT
+wait.default_timeout_seconds = 10
