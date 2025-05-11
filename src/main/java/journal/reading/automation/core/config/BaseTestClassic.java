@@ -1,32 +1,23 @@
-package journal.reading.automation.config;
+package journal.reading.automation.core.config;
 
 import com.microsoft.playwright.*;
+import journal.reading.automation.core.utilities.ConfigReader;
+import journal.reading.automation.core.utilities.GetScreenSize;
 import org.junit.jupiter.api.*;
 
-public class LaunchSettings {
+public class BaseTestClassic {
 
-    // Shared between all tests in this class.
     static Playwright playwright;
     static Browser browser;
 
-    // New instance for each test method.
     public BrowserContext context;
     public Page page;
-
-  /*  @BeforeAll
-    public static void setUp() {
-       try (Playwright playwright = Playwright.create()) {
-           Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-           Page page = browser.newPage();
-           page.navigate("http://localhost:8080/");
-       }*/
 
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     }
-
 
     @AfterAll
     static void closeBrowser() {
@@ -35,9 +26,10 @@ public class LaunchSettings {
 
     @BeforeEach
     void createContextAndPage() {
-        context = browser.newContext();
+        context = browser.newContext(new Browser.NewContextOptions().setViewportSize(GetScreenSize.getViewportSize()));
         page = context.newPage();
-        page.navigate("http://localhost:8080/");
+        page.viewportSize();
+        page.navigate(ConfigReader.get("url.locale"));
     }
 
     @AfterEach

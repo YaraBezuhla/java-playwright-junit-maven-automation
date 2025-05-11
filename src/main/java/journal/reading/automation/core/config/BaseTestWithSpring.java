@@ -1,13 +1,17 @@
-package journal.reading.automation.config;
+package journal.reading.automation.core.config;
 
 import com.microsoft.playwright.*;
+import journal.reading.automation.core.utilities.ConfigReader;
+import journal.reading.automation.core.utilities.GetScreenSize;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
 @Configuration
 @ComponentScan(basePackages = "journal.reading.automation.pageObjects")
-public class TestConfigWithSpring {
+public class BaseTestWithSpring {
 
     @Bean
     public Playwright playwright() {
@@ -16,18 +20,22 @@ public class TestConfigWithSpring {
 
     @Bean
     public Browser browser(Playwright playwright) {
-        return playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        return playwright.chromium().launch(new BrowserType.LaunchOptions()
+                .setHeadless(false));
     }
 
     @Bean
     public BrowserContext browserContext(Browser browser) {
-        return browser.newContext();
+        return browser.newContext(
+                new Browser.NewContextOptions().setViewportSize(GetScreenSize.getViewportSize())
+
+        );
     }
 
     @Bean
     public Page page(BrowserContext browserContext) {
         Page page = browserContext.newPage();
-        page.navigate("http://localhost:8080/");
+        page.navigate(ConfigReader.get("url.locale"));
         return page;
     }
 

@@ -1,9 +1,10 @@
-package journal.reading.automation.database;
+package journal.reading.automation.services.database;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import journal.reading.automation.core.utilities.ConfigReader;
 import org.bson.Document;
 
 public class ConnectMongoDBSingleton {
@@ -13,8 +14,8 @@ public class ConnectMongoDBSingleton {
     private MongoDatabase mongoDatabase;
 
     private ConnectMongoDBSingleton() {
-        mongoClient = MongoClients.create("mongodb://localhost:27017");
-        mongoDatabase = mongoClient.getDatabase("automationreadingjournal");
+        mongoClient = MongoClients.create(ConfigReader.get("mongodb.uri"));
+        mongoDatabase = mongoClient.getDatabase(ConfigReader.get("mongodb.database"));
     }
 
     public static ConnectMongoDBSingleton getInstance() {

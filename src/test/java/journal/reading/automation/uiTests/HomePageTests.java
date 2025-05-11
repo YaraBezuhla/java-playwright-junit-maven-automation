@@ -1,17 +1,17 @@
-package uiTests;
+package journal.reading.automation.uiTests;
 
 import io.qameta.allure.Description;
 import journal.reading.automation.pageObjects.PageObjectsFacade;
-import journal.reading.automation.config.TestConfigWithSpring;
-import journal.reading.automation.database.DataManipulation;
-import journal.reading.automation.database.GetDataFromMongoDB;
+import journal.reading.automation.core.config.BaseTestWithSpring;
+import journal.reading.automation.testData.providers.DataManipulation;
+import journal.reading.automation.services.database.GetDataFromMongoDB;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.ArrayList;
 
-@SpringJUnitConfig(TestConfigWithSpring.class)
+@SpringJUnitConfig(BaseTestWithSpring.class)
 public class HomePageTests {
 
     private final PageObjectsFacade pageObjectsFacade;
@@ -29,7 +29,7 @@ public class HomePageTests {
 
         ArrayList<String> dbTitles = getDataFromMongoDB.getBookTitlesFromDB();
         ArrayList<String> webTitles = pageObjectsFacade.getBookTitles().getBookTitlesOnWebSite();
-        dataManipulation.compareDataFromWebsiteAndDatabase(dbTitles, webTitles);
+        dataManipulation.compareTwoArrays(dbTitles, webTitles);
     }
 
     @Test

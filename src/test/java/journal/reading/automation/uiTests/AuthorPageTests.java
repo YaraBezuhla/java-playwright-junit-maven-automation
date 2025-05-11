@@ -1,15 +1,15 @@
-package uiTests;
+package journal.reading.automation.uiTests;
 
-import journal.reading.automation.config.LaunchSettings;
-import journal.reading.automation.database.DataManipulation;
-import journal.reading.automation.database.GetDataFromMongoDB;
+import journal.reading.automation.core.config.BaseTestClassic;
+import journal.reading.automation.testData.providers.DataManipulation;
+import journal.reading.automation.services.database.GetDataFromMongoDB;
 import journal.reading.automation.pageObjects.components.BookTitlesComponent;
 import journal.reading.automation.pageObjects.pages.HomePageObjects;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class AuthorPageTests extends LaunchSettings {
+public class AuthorPageTests extends BaseTestClassic {
 
     @Test
     public void assertAuthorBooks() {
@@ -22,6 +22,6 @@ public class AuthorPageTests extends LaunchSettings {
         homePage.goToAuthorPage(expectedAuthor);
         ArrayList<String> webTitles = bookTitles.getBookTitlesOnWebSite();
         ArrayList<String> dbTitles = getDataFromMongoDB.getBookTitlesOneAuthorFromDatabase(expectedAuthor);
-        dataManipulation.compareDataFromWebsiteAndDatabase(dbTitles, webTitles);
+        dataManipulation.compareTwoArrays(dbTitles, webTitles);
     }
 }

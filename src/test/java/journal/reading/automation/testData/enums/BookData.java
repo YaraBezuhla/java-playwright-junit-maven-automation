@@ -1,11 +1,9 @@
-package journal.reading.automation.datas;
+package journal.reading.automation.testData.enums;
 
 public enum BookData {
     INTERNAT("Інтернат", "Сергій Жадан"),
-    IAMROMANTIC("Я (Романтика)", "Микола Хвильовий"),
-    TIGERS("Тигролови", "Іван Багряний"),
-    INTERMEZZO("Intermezzo", "Михайло Коцюбинський"),
-    YOUAREINTERESTEDDARKNESS("Я бачу вас цікавить пітьма", "Ілларіон Павлюк");
+    INTERMEZZO("Білий попіл", "Ілларіон Павлю"),
+    YOUAREINTERESTEDDARKNESS("Я бачу, вас цікавить пітьма", "Ілларіон Павлюк");
 
     private final String title;
     private final String author;
