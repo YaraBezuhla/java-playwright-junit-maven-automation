@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class BookDataProvider {
+public class JsonBookProvider {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static List<Map<String, Object>> getBooks() {
-        try (InputStream is = BookDataProvider.class.getClassLoader().getResourceAsStream("testData/books.json")) {
+        try (InputStream is = JsonBookProvider.class.getClassLoader().getResourceAsStream("testData/books.json")) {
             if (is == null) {
                 throw new RuntimeException("Файл books.json не вдалося знайти в ресурсах");
             }
@@ -21,14 +21,6 @@ public class BookDataProvider {
         } catch (Exception e) {
             throw new RuntimeException("Не вдалося прочитати books.json" + e);
         }
-    }
-
-    public static Map<String, Object> getBookIndex(int index) {
-        List<Map<String, Object>> books = getBooks();
-        if (index < 0 || index >= books.size()) {
-            throw new IllegalArgumentException("Неправильний книжковий індекс: " + index);
-        }
-        return books.get(index);
     }
 
     public static List<String> getBookTitles() {

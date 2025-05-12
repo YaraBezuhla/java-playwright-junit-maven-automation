@@ -8,13 +8,11 @@ public enum BookData {
     private final String title;
     private final String author;
 
-    // Конструктор
     BookData(String title, String author) {
         this.title = title;
         this.author = author;
     }
 
-    // Геттери
     public String getTitle() {
         return title;
     }

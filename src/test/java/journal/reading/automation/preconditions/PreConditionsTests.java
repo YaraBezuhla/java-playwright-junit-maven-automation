@@ -2,7 +2,7 @@ package journal.reading.automation.preconditions;
 
 import io.qameta.allure.Description;
 import journal.reading.automation.services.api.ApiMethods;
-import journal.reading.automation.testData.providers.BookDataProvider;
+import journal.reading.automation.testData.providers.JsonBookProvider;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -26,7 +26,7 @@ public class PreConditionsTests {
     @Test
     @Description("Видалити книгу за допомогою АПІ")
     public void deleteBookByApiTest() {
-        apiMethods.deleteBookByApi(BookDataProvider.getBookTitles());
+        apiMethods.deleteBookByApi(JsonBookProvider.getBookTitles());
     }
 
     @ParameterizedTest

@@ -1,7 +1,7 @@
 package journal.reading.automation.uiTests;
 
 import journal.reading.automation.core.config.BaseTestClassic;
-import journal.reading.automation.testData.providers.DataManipulation;
+import journal.reading.automation.testData.utility.DataManipulation;
 import journal.reading.automation.services.database.GetDataFromMongoDB;
 import journal.reading.automation.pageObjects.components.BookTitlesComponent;
 import journal.reading.automation.pageObjects.pages.HomePageObjects;

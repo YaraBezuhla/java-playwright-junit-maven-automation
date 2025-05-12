@@ -2,7 +2,7 @@ package journal.reading.automation.apiTests;
 
 import io.qameta.allure.Description;
 import journal.reading.automation.services.api.ApiMethods;
-import journal.reading.automation.testData.providers.BookDataProvider;
+import journal.reading.automation.testData.providers.JsonBookProvider;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class AddBooksApiTests {
     public void beforeAll() {
         apiMethods.createPlaywright();
         apiMethods.createApiRequest();
-        books = BookDataProvider.getBooks();
+        books = JsonBookProvider.getBooks();
     }
 
     @Test
