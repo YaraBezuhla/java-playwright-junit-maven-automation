@@ -21,6 +21,10 @@ public class PageObjectsFacade {
     @Lazy
     private BookTitlesComponent bookTitles;
 
+    @Autowired
+    @Lazy
+    private HeaderComponent headerComponent;
+
     public HomePageObjects getHomePage() {
         return homePage;
     }
@@ -31,5 +35,9 @@ public class PageObjectsFacade {
 
     public BookTitlesComponent getBookTitles() {
         return bookTitles;
+    }
+
+    public HeaderComponent getHeader() {
+        return headerComponent;
     }
 }

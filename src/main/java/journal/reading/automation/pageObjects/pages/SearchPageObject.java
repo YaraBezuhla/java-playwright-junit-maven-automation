@@ -4,20 +4,16 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import io.qameta.allure.Step;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Component
 public class SearchPageObject {
     private final Locator searchInput;
     private final Locator titleBook;
     private final Locator authorBook;
 
-    @Autowired
     public SearchPageObject(Page page){
         this.searchInput = page.getByRole(AriaRole.SEARCHBOX);
         this.titleBook = page.locator("//h3[@data-test='search-book-title']");

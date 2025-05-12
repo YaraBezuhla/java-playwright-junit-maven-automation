@@ -6,6 +6,12 @@ import journal.reading.automation.testData.providers.BookDataProvider;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+import java.util.List;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PreConditionsTests {
@@ -16,9 +22,25 @@ public class PreConditionsTests {
         apiMethods.createPlaywright();
         apiMethods.createApiRequest();
     }
+
     @Test
     @Description("Видалити книгу за допомогою АПІ")
     public void deleteBookByApiTest() {
         apiMethods.deleteBookByApi(BookDataProvider.getBookTitles());
+    }
+
+    @ParameterizedTest
+    @MethodSource("bookTitlesProvider")
+    public void parameterizedDeleteBooks(List<String> titles) {
+        apiMethods.deleteBookByApi(titles);
+    }
+
+    @Description("Видалити книгу за допомогою АПІ через параметризацію")
+    static Stream<List<String>> bookTitlesProvider() {
+        return Stream.of(
+                List.of("1984"),
+                List.of("The Great Gatsby"),
+                List.of("To Kill a Mockingbird")
+        );
     }
 }
