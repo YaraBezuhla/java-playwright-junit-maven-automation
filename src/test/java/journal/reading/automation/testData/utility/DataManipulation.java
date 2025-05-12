@@ -1,4 +1,4 @@
-package journal.reading.automation.testData.providers;
+package journal.reading.automation.testData.utility;
 
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;

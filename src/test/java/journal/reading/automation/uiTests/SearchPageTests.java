@@ -4,7 +4,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import journal.reading.automation.core.config.BaseTestClassic;
 import journal.reading.automation.pageObjects.components.HeaderComponent;
-import journal.reading.automation.testData.processor.BookProcessor;
+import journal.reading.automation.testData.providers.EnumBookProvider;
 import journal.reading.automation.pageObjects.pages.SearchPageObject;
 import org.junit.jupiter.api.Test;
 
@@ -16,10 +16,10 @@ public class SearchPageTests extends BaseTestClassic {
     public void checkSearchTitle() {
         HeaderComponent header = new HeaderComponent(page);
         SearchPageObject searchPage = new SearchPageObject(page);
-        BookProcessor bookProcessor = new BookProcessor();
+        EnumBookProvider enumBookProvider = new EnumBookProvider();
 
         header.goToSearchPage();
-        String title = bookProcessor.getRandomTitle();
+        String title = enumBookProvider.getRandomTitle();
         searchPage.inputTextInSearchInput(title);
         searchPage.assertBookFoundByName(title);
     }
@@ -29,9 +29,9 @@ public class SearchPageTests extends BaseTestClassic {
     public void checkSearchAuthor() {
         HeaderComponent header = new HeaderComponent(page);
         SearchPageObject searchPage = new SearchPageObject(page);
-        BookProcessor bookProcessor = new BookProcessor();
+        EnumBookProvider enumBookProvider = new EnumBookProvider();
 
-        String author = bookProcessor.getRandomAuthor();
+        String author = enumBookProvider.getRandomAuthor();
         header.goToSearchPage();
         searchPage.inputTextInSearchInput(author);
         searchPage.assertBookFoundByAuthor(author);
