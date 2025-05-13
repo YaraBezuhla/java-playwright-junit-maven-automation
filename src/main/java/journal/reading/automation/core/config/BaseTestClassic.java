@@ -30,10 +30,11 @@ public class BaseTestClassic {
         page = context.newPage();
         page.viewportSize();
         page.navigate(ConfigReader.get("url.locale"));
+        PageTemp.setPage(page);
     }
 
-    @AfterEach
+   /* @AfterEach
     void closeContext() {
         context.close();
-    }
+    }*/
 }
