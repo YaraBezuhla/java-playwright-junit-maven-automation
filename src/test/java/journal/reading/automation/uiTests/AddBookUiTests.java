@@ -2,12 +2,15 @@ package journal.reading.automation.uiTests;
 
 import io.qameta.allure.Description;
 import journal.reading.automation.core.config.BaseTestClassic;
+import journal.reading.automation.core.utilities.TestLogger;
 import journal.reading.automation.pageObjects.components.BookTitlesComponent;
 import journal.reading.automation.pageObjects.components.HeaderComponent;
 import journal.reading.automation.pageObjects.pages.AddBookPageObject;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+@ExtendWith(TestLogger.class)
 public class AddBookUiTests extends BaseTestClassic {
 
     @ParameterizedTest

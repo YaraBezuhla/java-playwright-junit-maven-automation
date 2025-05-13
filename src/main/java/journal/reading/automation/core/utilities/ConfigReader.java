@@ -10,7 +10,7 @@ public class ConfigReader {
     static {
         try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties")) {
             if (input == null) {
-                throw new RuntimeException("Вибачте, не вдалося знайти config.properties");
+                throw new RuntimeException("Не вдалося знайти config.properties");
             }
             properties.load(input);
         } catch (IOException ex) {

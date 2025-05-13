@@ -23,6 +23,10 @@ public class PageObjectsFacade {
 
     @Autowired
     @Lazy
+    private AddBookPageObject addBook;
+
+    @Autowired
+    @Lazy
     private HeaderComponent headerComponent;
 
     public HomePageObjects getHomePage() {
@@ -40,4 +44,5 @@ public class PageObjectsFacade {
     public HeaderComponent getHeader() {
         return headerComponent;
     }
+    public AddBookPageObject getAddBook() {return addBook; }
 }
