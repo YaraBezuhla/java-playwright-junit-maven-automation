@@ -1,5 +1,6 @@
 package journal.reading.automation.uiTests;
 
+import io.qameta.allure.Feature;
 import journal.reading.automation.core.config.BaseTestClassic;
 import journal.reading.automation.testData.utility.DataManipulation;
 import journal.reading.automation.services.database.GetDataFromMongoDB;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+@Feature("Сторінка автора")
 public class AuthorPageTests extends BaseTestClassic {
 
     @Test

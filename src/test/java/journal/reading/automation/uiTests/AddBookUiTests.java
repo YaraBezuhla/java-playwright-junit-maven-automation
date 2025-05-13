@@ -1,21 +1,20 @@
 package journal.reading.automation.uiTests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import journal.reading.automation.core.config.BaseTestClassic;
-import journal.reading.automation.core.utilities.TestLogger;
 import journal.reading.automation.pageObjects.components.BookTitlesComponent;
 import journal.reading.automation.pageObjects.components.HeaderComponent;
 import journal.reading.automation.pageObjects.pages.AddBookPageObject;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-@ExtendWith(TestLogger.class)
+@Feature("Додати книги через UI")
 public class AddBookUiTests extends BaseTestClassic {
 
     @ParameterizedTest
     @CsvSource({
-            "'1984', 'George Orwell', 'Біографія'",
+            "'1984', 'George Orwell', 'Біографі'",
             "'The Great Gatsby', 'F. Scott Fitzgerald', 'Роман'",
             "'To Kill a Mockingbird', 'Harper Lee', 'Пригоди'"
     })

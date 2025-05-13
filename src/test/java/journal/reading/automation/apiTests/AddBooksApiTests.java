@@ -1,6 +1,7 @@
 package journal.reading.automation.apiTests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import journal.reading.automation.services.api.ApiMethods;
 import journal.reading.automation.testData.providers.JsonBookProvider;
 import org.junit.jupiter.api.*;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.*;
 import java.util.List;
 import java.util.Map;
 
+@Feature("Додати книги через API")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AddBooksApiTests {
 

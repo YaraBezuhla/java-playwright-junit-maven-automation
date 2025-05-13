@@ -1,6 +1,7 @@
 package journal.reading.automation.uiTests;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import journal.reading.automation.core.utilities.TestLogger;
 import journal.reading.automation.pageObjects.PageObjectsFacade;
 import journal.reading.automation.core.config.BaseTestWithSpring;
@@ -14,6 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.ArrayList;
 
+@Feature("Головна сторінка")
 @ExtendWith(TestLogger.class)
 @SpringJUnitConfig(BaseTestWithSpring.class)
 public class HomePageTests {

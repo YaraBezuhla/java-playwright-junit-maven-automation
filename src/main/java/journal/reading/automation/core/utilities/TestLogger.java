@@ -1,12 +1,14 @@
 package journal.reading.automation.core.utilities;
 
 import com.microsoft.playwright.Page;
+import io.qameta.allure.Allure;
 import journal.reading.automation.core.config.PageTemp;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
+import java.io.ByteArrayInputStream;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -53,14 +55,14 @@ public class TestLogger implements BeforeTestExecutionCallback, AfterTestExecuti
                 return;
             }
 
+            byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+
+            Allure.addAttachment("Screenshot on failure", new ByteArrayInputStream(screenshotBytes));
+
             Path path = Paths.get("target", "screenshots",
                     context.getDisplayName().replaceAll("\\s+", "_") + ".png");
-
             Files.createDirectories(path.getParent());
-
-            page.screenshot(new Page.ScreenshotOptions()
-                    .setPath(path)
-                    .setFullPage(true));
+            Files.write(path, screenshotBytes);
 
             logger.info(() -> "Screenshot saved to: " + path.toAbsolutePath());
         } catch (Exception e) {

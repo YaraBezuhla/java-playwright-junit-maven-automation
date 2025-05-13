@@ -3,8 +3,11 @@ package journal.reading.automation.core.config;
 import com.microsoft.playwright.*;
 import journal.reading.automation.core.utilities.ConfigReader;
 import journal.reading.automation.core.utilities.GetScreenSize;
+import journal.reading.automation.core.utilities.TestLogger;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(TestLogger.class)
 public class BaseTestClassic {
 
     static Playwright playwright;

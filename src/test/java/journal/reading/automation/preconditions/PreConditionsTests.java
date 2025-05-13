@@ -1,6 +1,7 @@
 package journal.reading.automation.preconditions;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import journal.reading.automation.services.api.ApiMethods;
 import journal.reading.automation.testData.providers.JsonBookProvider;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,6 +14,7 @@ import java.util.stream.Stream;
 
 import java.util.List;
 
+@Feature("PreConditionsTests")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PreConditionsTests {
     ApiMethods apiMethods = new ApiMethods();
